@@ -32,11 +32,6 @@ const DynamicTable: React.FC<DynamicTableProps> = ({ config }) => {
   );
 };
 
-const countLevel = (group?: DynamicRowConfiguration): number => {
-  if (!group) return 0;
-  return 1 + (group.inner ? group.inner.map(countLevel).reduce((acc, curr) => acc + curr, 0) : 0);
-};
-
 interface DynamicTableRowProps {
   config: DynamicRowConfiguration;
   level?: number;
@@ -44,7 +39,6 @@ interface DynamicTableRowProps {
 
 const DynamicTableRow: React.FC<DynamicTableRowProps> = ({ config, level = 1 }) => {
   const [open, setOpen] = useState(false);
-  const [numberOfRows] = useState(countLevel(config));
 
   return (
     <>
@@ -56,7 +50,6 @@ const DynamicTableRow: React.FC<DynamicTableRowProps> = ({ config, level = 1 }) 
             </IconButton>
           )}
           {config.group}
-          {!!numberOfRows && config.inner && `(${numberOfRows})`}
         </TableCell>
         {Object.values(config.result).map((columnName) => (
           <Fragment key={columnName}>

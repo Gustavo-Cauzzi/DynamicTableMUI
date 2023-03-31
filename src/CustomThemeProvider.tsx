@@ -4,7 +4,7 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { appTheme, Theme } from "./appTheme";
 
 export const CustomThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState<Theme>("dark");
+  const [currentTheme, setCurrentTheme] = useState<Theme>("light");
 
   useEffect(() => {
     document.body.style.backgroundColor = currentTheme === "dark" ? "#000" : "#Fff";

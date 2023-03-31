@@ -25,34 +25,6 @@ export const App: React.FC = () => {
                       group: "ORDINARY",
                       result: { "MARKET VALUE": 200, VAR: 65 },
                     },
-                    {
-                      group: "STOCK",
-                      result: { "MARKET VALUE": 350, VAR: 95 },
-                      inner: [
-                        {
-                          group: "PREFERRED",
-                          result: { "MARKET VALUE": 150, VAR: 30 },
-                        },
-                        {
-                          group: "ORDINARY",
-                          result: { "MARKET VALUE": 200, VAR: 65 },
-                        },
-                        {
-                          group: "STOCK",
-                          result: { "MARKET VALUE": 350, VAR: 95 },
-                          inner: [
-                            {
-                              group: "PREFERRED",
-                              result: { "MARKET VALUE": 150, VAR: 30 },
-                            },
-                            {
-                              group: "ORDINARY",
-                              result: { "MARKET VALUE": 200, VAR: 65 },
-                            },
-                          ],
-                        },
-                      ],
-                    },
                   ],
                 },
                 {
